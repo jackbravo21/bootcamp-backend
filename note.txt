@@ -9,3 +9,27 @@ git add .
 
 git commit -m "Inicializando projeto vazio com dependencias iniciais TS"
 
+git config --global user.name "jackbravo21"
+git config --global user.email "laraftoller@gmail.com"
+
+git remote add origin https://github.com/jackbravo21/bootcamp-backend.git
+
+git push
+
+//==========================================================
+
+…or create a new repository on the command line
+echo "# bootcamp-backend" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/jackbravo21/bootcamp-backend.git
+git push -u origin main
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/jackbravo21/bootcamp-backend.git
+git branch -M main
+git push -u origin main
+
+//==========================================================
