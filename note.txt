@@ -47,3 +47,12 @@ npm i express --save
 npm i @types/express                        //habilitar suporte ao typescript
 
 res.sendStatus(200).json
+
+
+git log
+
+git switch -c primeiro-server               //criar
+git switch primeiro-server                  //muda de brench
+git commit -m "Criando servidor em Express"
+git status
+git push
