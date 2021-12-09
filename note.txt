@@ -1,0 +1,11 @@
+git init
+git status
+
+.gitignore
+    node_modules/
+    build/
+
+git add .
+
+git commit -m "Inicializando projeto vazio com dependencias iniciais TS"
+
