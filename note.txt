@@ -56,3 +56,11 @@ git switch primeiro-server                  //muda de brench
 git commit -m "Criando servidor em Express"
 git status
 git push
+
+npm install mongoose
+
+config.ts
+
+npm i @types/mongoose --save-dev
+
+*************** npm run dev 

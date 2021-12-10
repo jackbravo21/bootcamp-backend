@@ -1,4 +1,7 @@
 import express from "express";
+import mongoose from "mongoose";
+import config from "./config";
+import {Movie} from "./models/movie.model"
 
 const app = express();
 
@@ -6,12 +9,11 @@ app.use(express.json());                                    //usa a biblioteca j
 
 app.get("/", (req, res) => {
     res.sendStatus(200).json({
-      Message: "Server Express"
+      Message: "Server Express Rodando."
     });
 });
 
-const port = 5000;
-
-app.listen(port, ()=>{
-    console.log("Server functionando na porta: ", port);
+app.listen(config.PORT, async() => {
+    console.log("Server functionando na porta: ", config.PORT);
+    mongoose.connect(config.MONGO_URI);                               //conectar ao mongo;
 });
