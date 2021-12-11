@@ -64,3 +64,12 @@ config.ts
 npm i @types/mongoose --save-dev
 
 *************** npm run dev 
+
+npm install bcrypt
+npm install bcryptjs
+
+npm install @types/bcryptjs --save-dev
+
+npm install jsonwebtoken
+npm install @types/jsonwebtoken --save-dev
+
