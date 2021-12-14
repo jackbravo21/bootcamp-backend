@@ -73,3 +73,17 @@ npm install @types/bcryptjs --save-dev
 npm install jsonwebtoken
 npm install @types/jsonwebtoken --save-dev
 
+npm install dotenv
+
+npm install axios
+
+api: www.themoviedb.org
+https://api.themoviedb.org/
+API KEY - 8c9751844a68e8e7105d68bd90f6eb25
+
+const URL_MOVIES = 'https://api.themoviedb.org/3/trending/all/week?api_key=8c9751844a68e8e7105d68bd90f6eb25';
+
+const URL_CATEGORIES = 'https://api.themoviedb.org/3/genre/movie/list?api_key=8c9751844a68e8e7105d68bd90f6eb25&language=en-US';
+
+const URL_IMAGES = 'https://image.tmdb.org/t/p/w600_and_h900_bestv2/'
+
