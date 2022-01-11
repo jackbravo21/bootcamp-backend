@@ -8,24 +8,26 @@ interface UserResult {
     password?: string;
 }
 
+//rota de teste (se descomentar, adicionar "all" no export);
+/*
 async function all(req: Request, res: Response)
 {
-    //moongose;
     const user = await User.find();
                 
     //user.password = undefined;
 
     console.log(user);
 
-    return res.send(user);     
+    return res.json({user});     
 }
+*/
 
 async function view(req: Request, res: Response) {
     const { id } = req.params;
 
     if (!id) {
         return res.status(404).json({
-            message: 'Usuário não encontrado'
+            message: 'Usuário não encontrado!'
         });
     }
 
@@ -80,7 +82,7 @@ async function destroy(req: Request, res: Response) {
 
     if (!idExists) {
         return res.status(404).json({
-            message: 'Usuário não encontrado.'
+            message: 'Usuário não encontrado!'
         });
     }
 
@@ -88,13 +90,13 @@ async function destroy(req: Request, res: Response) {
     
     if (!deleteUser) {
         res.status(500).json({
-            message: 'Não foi possível deletar o usuário'
+            message: 'Erro: Não foi possível deletar o usuário!'
         });
     }
 
     return res.status(200).json({
-        message: 'Usuário apagado com sucesso.'
+        message: 'Usuário apagado com sucesso!'
     });
 }
 
-export { all, view, create, destroy };
+export { view, create, destroy };

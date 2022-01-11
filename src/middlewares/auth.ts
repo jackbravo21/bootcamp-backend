@@ -10,7 +10,7 @@ interface JWToken {
 
 function authorize(req: Request, res: Response, next: NextFunction) {    
        
-    const { authorization } = req.headers;                                  //vou pegar o header com nome authorization, se nao tiver eh pq nao veio;
+    const { authorization } = req.headers;
 
     if (!authorization) {
         return res.status(401).json({
@@ -18,7 +18,7 @@ function authorize(req: Request, res: Response, next: NextFunction) {
         });
     }
 
-    const token = authorization.replace('Bearer', '').trim();                //dou um replace no Bearer e substituo por nada para apagar ele, e tiro os espacos com trim;
+    const token = authorization.replace('Bearer', '').trim();
 
     try {
 
@@ -28,7 +28,7 @@ function authorize(req: Request, res: Response, next: NextFunction) {
 
             if (!id) {
                 return res.status(401).json({
-                    error: 'Não autorizado'
+                    error: 'Não autorizado!'
                 });
             }
             req.user = id;

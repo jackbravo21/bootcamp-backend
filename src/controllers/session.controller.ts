@@ -1,15 +1,3 @@
-
-/*
-
-1:
-- /cadastro: novo user DB / nova session;
-
-2:
-- /cadastro: novo user DB
--> /login: nova session; 
-
-*/
-
 import { Request, Response } from 'express';
 import { User } from '../models/user.model';
 import jwt from 'jsonwebtoken';
@@ -21,13 +9,13 @@ function index(req: Request, res: Response) {
 
     if (!req.headers.authorization) {
         return res.status(401).json({
-            error: 'Usuário não autorizado '
+            error: 'Usuário não autorizado!'
         });
     }
 
     if (!req.user) {
         return res.status(401).json({
-            error: 'Usuário não autorizado '
+            error: 'Usuário não autorizado!'
         });
     }
 
@@ -37,13 +25,14 @@ function index(req: Request, res: Response) {
 }
 
 async function create(req: Request, res: Response) {
+    
     const { email, password } = req.body;
 
     const userExists = await User.findOne({ email });
 
     if (!userExists) {
         return res.status(403).json({
-            message: 'Não foi possível autenticar.'
+            message: 'Não foi possível autenticar!'
         });
     }
 
@@ -51,7 +40,7 @@ async function create(req: Request, res: Response) {
 
     if (!isValid) {
         return res.status(401).json({
-            message: 'Não foi possível autenticar.'
+            message: 'Não foi possível autenticar!'
         });
     }
 
@@ -78,7 +67,8 @@ function createAccessToken(userId: string) {
         },
         token,
         {
-            expiresIn: 900 // 15min
+            //expiresIn: 900 // 15min
+            expiresIn: 86400 // 1d
         }
     );
 

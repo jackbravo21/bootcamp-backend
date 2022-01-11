@@ -87,3 +87,41 @@ const URL_CATEGORIES = 'https://api.themoviedb.org/3/genre/movie/list?api_key=8c
 
 const URL_IMAGES = 'https://image.tmdb.org/t/p/w600_and_h900_bestv2/'
 
+//link de teste:
+https://api.themoviedb.org/3/movie/597?api_key=8c9751844a68e8e7105d68bd90f6eb25&language=en-US
+
+{
+    "name": "Titanic",
+    "category": "Drama",
+    "description": "101-year-old Rose DeWitt Bukater tells the story of her life aboard the Titanic, 84 years later. A young Rose boards the ship with her mother and fiancé. Meanwhile, Jack Dawson and Fabrizio De Rossi win third-class tickets aboard the ship. Rose tells the whole story from Titanic's departure through to its death—on its first and last voyage—on April 15, 1912.",
+    "media_type": "movie",
+    "poster": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/6VmFqApQRyZZzmiGOQq2C92jyvH.jpg"
+}
+
+http://localhost:5000/external/createBulk
+{
+    "filePath": "./src/movies.json"
+}
+
+CORS:
+npm install cors
+npm i @types/cors --save-dev
+
+
+- Laravel usa Singleton;
+
+SOLID:
+- Sem repetir codigo;
+- Make simple o codigo;
+- Unica responsabilidade;
+- Dividir interesses, dividir rotas, do MDV;
+
+
+
+
+
+
+
+
+

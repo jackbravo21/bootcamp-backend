@@ -4,6 +4,7 @@ interface MovieDocument {
     name: string;
     category: string;
     description: string;
+    media_type: string;
     poster: string;
     backdrop?: string;
 }
@@ -22,6 +23,10 @@ const MovieSchema = new Schema<MovieDocument>(
             type: String,
             required: true
         },
+        media_type: {
+            type: String,
+            required: true
+        },
         poster: {
             type: String,
             required: true
@@ -32,10 +37,6 @@ const MovieSchema = new Schema<MovieDocument>(
     },
     {
         timestamps: true
-        /*
-        createdAt: Date
-        updatedAt: Date
-        */
     }
 );
 

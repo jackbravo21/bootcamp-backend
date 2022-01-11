@@ -10,10 +10,12 @@ const ListSchema = new Schema(
         user_id: {
             type: SchemaTypes.ObjectId,
             require: true,
+            ref: "User"
         },
         modie_id: {
             type: SchemaTypes.ObjectId,
             require: true,
+            ref: "Movie"
         }
     },
     {

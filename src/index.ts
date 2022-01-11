@@ -3,6 +3,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import { apiRouter } from './routes/api.routes';
 import { extRouter } from './routes/external.routes';
+import cors from "cors";
 
 dotenv.config();
 
@@ -10,6 +11,7 @@ const app = express();
 app.use(express.json());
 app.use(apiRouter);
 app.use(extRouter);
+app.use(cors());
 
 const ENV_VARS = {
     port: process.env.PORT,
@@ -27,12 +29,5 @@ app.listen(ENV_VARS.port, async () => {
     }
 });
 
+
 export { ENV_VARS }
-
-/*
-app.listen(config.PORT, async() => {
-    console.log("Server functionando na porta: ", config.PORT);
-    mongoose.connect(config.MONGO_URI);                               //conectar ao mongo;
-});
-
-*/
