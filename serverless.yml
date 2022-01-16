@@ -1,0 +1,26 @@
+service: netflix-express-web-v2
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: dev
+  region: us-east-1
+  memorySize: 128
+  timeout: 30
+  environment:
+    MONGO_URI: 'mongodb+srv://root:toor@cluster0.7vw6y.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+    TOKEN_SECRET: 'my-secret-hash'
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+functions:
+  app:
+    handler: src/index.handler
+    events:
+      - http:
+          path: /
+          method: ANY
+          cors: true
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true

@@ -8,8 +8,8 @@ interface UserResult {
     password?: string;
 }
 
-//rota de teste (se descomentar, adicionar "all" no export);
-/*
+//rota de teste (se descomentar, adicionar "all" no export) e habilitar nas rotas;
+
 async function all(req: Request, res: Response)
 {
     const user = await User.find();
@@ -20,7 +20,7 @@ async function all(req: Request, res: Response)
 
     return res.json({user});     
 }
-*/
+
 
 async function view(req: Request, res: Response) {
     const { id } = req.params;
@@ -99,4 +99,4 @@ async function destroy(req: Request, res: Response) {
     });
 }
 
-export { view, create, destroy };
+export { all, view, create, destroy };

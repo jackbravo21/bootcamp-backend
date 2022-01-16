@@ -118,7 +118,26 @@ SOLID:
 - Dividir interesses, dividir rotas, do MDV;
 
 
+- AWS:
+npm i -g serveless
+npm i -D serverless-offline                                             //trabalhar com server offline
+npm i -D serverless-plugin-typescript typescript                        //instalar o interpretador de typescript
+npm i serverless-http                                                   //para fazer requisicoes http
+bcryptjs (não pode estar nos devDependencies)
 
+- Rodar server:
+serverless offline
+
+- Realizar deploy:
+serveless deploy
+
+- Remover deploy:
+serverless remove
+
+ANY | http://localhost:3000/dev                                     
+POST | http://localhost:3000/2015-03-31/functions/app/invocations   
+ANY | http://localhost:3000/dev/{proxy*}                            
+POST | http://localhost:3000/2015-03-31/functions/app/invocations 
 
 
 

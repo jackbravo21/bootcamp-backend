@@ -17,7 +17,7 @@ apiRouter.get('/', (req, res) => {
 
 /* ROTAS DE USUÁRIO */
 
-//apiRouter.get('/users/all', userController.all);
+apiRouter.get('/users/all', userController.all);
 apiRouter.post('/users/new', userController.create);
 apiRouter.get('/users/id/:id', userController.view);
 apiRouter.delete('/users/destroy/:id', authorize, userController.destroy);
