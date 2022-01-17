@@ -6,7 +6,8 @@ interface UserDocument extends Document {
     email: string;
     password: string;
     comparePassword(preHashPassword: string): Promise<boolean>;
-    
+    createdAt?: string;                                                 //sendo chamado no metodo all do user.controllers;
+    updatedAt?: string;                                                 //sendo chamado no metodo all do user.controllers;
 }
 
 const UserSchema = new Schema(

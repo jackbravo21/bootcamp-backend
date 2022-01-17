@@ -14,11 +14,14 @@ async function all(req: Request, res: Response)
 {
     const user = await User.find();
                 
-    //user.password = undefined;
+    const allUsers = user.map(
+         usuarios => '_id: ' + `${usuarios._id}` + ', name: ' + `${usuarios.name}` + ', email: ' + `${usuarios.email}` + ', createdAt: ' + `${usuarios.createdAt}` + ', updatedAt: ' + `${usuarios.updatedAt}`
+         );
 
-    console.log(user);
+    console.log( allUsers );
 
-    return res.json({user});     
+    return res.json({allUsers});
+
 }
 
 
@@ -46,6 +49,7 @@ async function view(req: Request, res: Response) {
         }
     });
 }
+
 
 async function create(req: Request, res: Response) {
     const { name, email, password } = req.body;
@@ -75,6 +79,7 @@ async function create(req: Request, res: Response) {
     });
 }
 
+
 async function destroy(req: Request, res: Response) {
     const { id } = req.params;
 
@@ -98,5 +103,6 @@ async function destroy(req: Request, res: Response) {
         message: 'Usuário apagado com sucesso!'
     });
 }
+
 
 export { all, view, create, destroy };

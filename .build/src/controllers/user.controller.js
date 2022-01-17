@@ -15,9 +15,9 @@ const user_model_1 = require("../models/user.model");
 function all(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         const user = yield user_model_1.User.find();
-        //user.password = undefined;
-        console.log(user);
-        return res.json({ user });
+        const allUsers = user.map(usuarios => '_id: ' + `${usuarios._id}` + ', name: ' + `${usuarios.name}` + ', email: ' + `${usuarios.email}` + ', createdAt: ' + `${usuarios.createdAt}` + ', updatedAt: ' + `${usuarios.updatedAt}`);
+        console.log(allUsers);
+        return res.json({ allUsers });
     });
 }
 exports.all = all;
