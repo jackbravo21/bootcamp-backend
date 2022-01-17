@@ -24,3 +24,6 @@ functions:
           path: /{proxy+}
           method: ANY
           cors: true
+custom:
+  serverless-offline:
+    httpPort: 5000
