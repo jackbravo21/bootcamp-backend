@@ -7,7 +7,7 @@ provider:
   memorySize: 128
   timeout: 30
   environment:
-    MONGO_URI: 'mongodb+srv://root:toor@cluster0.7vw6y.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+    MONGO_URI: 'mongodb+srv://root:@cluster0.7vw6y.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
     TOKEN_SECRET: 'my-secret-hash'
 plugins:
   - serverless-plugin-typescript
