@@ -30,7 +30,6 @@ async function index(req: Request, res: Response) {
             }
         );
     }
-
 }
 
 async function create(req: Request, res: Response) {
